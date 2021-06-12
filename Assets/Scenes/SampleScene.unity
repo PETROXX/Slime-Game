@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 698310083}
   - component: {fileID: 698310081}
   - component: {fileID: 698310082}
+  - component: {fileID: 698310084}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -668,6 +669,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &698310084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698310075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078d119d9f197db419dc1f285ab45059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703771434
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +928,7 @@ GameObject:
   - component: {fileID: 974529751}
   - component: {fileID: 974529750}
   - component: {fileID: 974529749}
+  - component: {fileID: 974529752}
   m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
@@ -1034,6 +1048,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &974529752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974529747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d4e6cbe749f5047b7f15ef36adbb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1400541267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1072,7 @@ GameObject:
   - component: {fileID: 1400541271}
   - component: {fileID: 1400541270}
   - component: {fileID: 1400541269}
+  - component: {fileID: 1400541272}
   m_Layer: 0
   m_Name: LeftWall
   m_TagString: Untagged
@@ -1165,6 +1192,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1400541272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400541267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d4e6cbe749f5047b7f15ef36adbb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543948592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572726611}
+  - component: {fileID: 1572726612}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -1229,6 +1269,32 @@ Transform:
   m_Father: {fileID: 698310080}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1572726612
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572726610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0012513846, y: 0.00043794268}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1398409, y: 0.004007997}
+  m_EdgeRadius: 0
 --- !u!1 &1919241888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1441,7 @@ GameObject:
   - component: {fileID: 1978610557}
   - component: {fileID: 1978610556}
   - component: {fileID: 1978610559}
+  - component: {fileID: 1978610560}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1494,6 +1561,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1978610560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978610555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d4e6cbe749f5047b7f15ef36adbb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1997825868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022964174}
   - component: {fileID: 2022964175}
-  - component: {fileID: 2022964176}
+  - component: {fileID: 2022964177}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1609,7 +1688,7 @@ MonoBehaviour:
   _points:
   - {fileID: 7711798864955593357, guid: 3c9f04581f0ed5c4d8bbe2add6c98a6a, type: 3}
   - {fileID: 2697517847492026644, guid: 9e7420d3b917c5f40992471c1f190c93, type: 3}
---- !u!114 &2022964176
+--- !u!114 &2022964177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1618,7 +1697,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2022964173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e316beae2c735ae45b239265ba188aaf, type: 3}
+  m_Script: {fileID: 11500000, guid: c2d6f2d5c05f1a340b39425a2cea8dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverText: {fileID: 1919241890}
@@ -1634,6 +1713,7 @@ GameObject:
   - component: {fileID: 2024249092}
   - component: {fileID: 2024249091}
   - component: {fileID: 2024249090}
+  - component: {fileID: 2024249093}
   m_Layer: 0
   m_Name: RightWall
   m_TagString: Untagged
@@ -1753,6 +1833,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2024249093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024249088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d4e6cbe749f5047b7f15ef36adbb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &4998819262068963249
 ParticleSystem:
   m_ObjectHideFlags: 0

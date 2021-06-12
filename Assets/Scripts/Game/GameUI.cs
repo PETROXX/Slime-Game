@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 [RequireComponent(typeof(GameLocation))]
 
-public class Game : MonoBehaviour
+public class GameUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _gameOverText;
     private float _textCooldown = 5;
