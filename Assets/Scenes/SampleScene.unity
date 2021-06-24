@@ -555,7 +555,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 50
-  _groundCheck: {fileID: 1572726611}
 --- !u!114 &698310082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,7 +568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 0
-  _scoreText: {fileID: 703771436}
   _dieEffect: {fileID: 4998819262088851157}
   _spawnPosition: {x: -5.28, y: -4.27}
   _deathSound: {fileID: 8300000, guid: b08e7653388939b40b6927e62a24c978, type: 3}
@@ -1650,6 +1648,7 @@ GameObject:
   - component: {fileID: 2022964174}
   - component: {fileID: 2022964175}
   - component: {fileID: 2022964177}
+  - component: {fileID: 2022964176}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1688,6 +1687,20 @@ MonoBehaviour:
   _points:
   - {fileID: 7711798864955593357, guid: 3c9f04581f0ed5c4d8bbe2add6c98a6a, type: 3}
   - {fileID: 2697517847492026644, guid: 9e7420d3b917c5f40992471c1f190c93, type: 3}
+--- !u!114 &2022964176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022964173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d843d5713b9c8ed47ad9f7428dcaa3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverText: {fileID: 1919241890}
+  _scoreText: {fileID: 703771436}
 --- !u!114 &2022964177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d6f2d5c05f1a340b39425a2cea8dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameOverText: {fileID: 1919241890}
 --- !u!1 &2024249088
 GameObject:
   m_ObjectHideFlags: 0

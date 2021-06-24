@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using System.Collections;
 
@@ -11,7 +10,7 @@ public class Slime : MonoBehaviour
 {
     [SerializeField] private float _score;
 
-    [SerializeField] private TMP_Text _scoreText;
+    public float Score => _score;
 
     [SerializeField] private GameObject _dieEffect;
 
@@ -26,6 +25,8 @@ public class Slime : MonoBehaviour
 
     public bool IsAlive { get; private set; }
 
+    private float _deathEffectLenght = 2f;
+
     private void Start()
     {
         IsAlive = true;
@@ -35,11 +36,6 @@ public class Slime : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _audioSource.clip = _deathSound;
         _rig.position = _spawnPosition;
-    }
-
-    private void Update()
-    {
-        _scoreText.text = $"Score: {_score}";
     }
 
     public void AddPoint()
@@ -60,7 +56,7 @@ public class Slime : MonoBehaviour
 
     IEnumerator DestroySlime()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(_deathEffectLenght);
         gameObject.SetActive(false);
     }
 

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(GameUI))]
+[RequireComponent(typeof(Game))]
 public class GameLocation : MonoBehaviour
 {
     [SerializeField] private Vector2 _min;

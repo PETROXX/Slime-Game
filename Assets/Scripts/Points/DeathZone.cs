@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class DeathZone : Point
 {
-    private void Start()
+    protected override void Start()
     {
-        Initialize();
+        base.Start();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Slime>(out _))
-        {
-            CollectPoint();
-        }
+        base.OnTriggerEnter2D(collision);
     }
 
     protected override void CollectPoint()

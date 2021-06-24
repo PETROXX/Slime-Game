@@ -6,24 +6,19 @@ public class ScorePoint : Point
 { 
     [SerializeField] private GameObject _collectEffect;
 
-    private bool _wasCollected;
 
-    private void Start()
+    protected override void Start()
     {
-        Initialize();
+        base.Start();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<Slime>(out Slime _) && !_wasCollected)
-        {
-            CollectPoint();
-        }
+        base.OnTriggerEnter2D(collision);
     }
 
     protected override void CollectPoint()
     {
-        _wasCollected = true;
         Slime.AddPoint();
         gameObject.SetActive(false);
         _collectEffect.SetActive(true);

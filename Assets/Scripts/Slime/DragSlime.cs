@@ -7,11 +7,9 @@ public class DragSlime : MonoBehaviour
 {
     [SerializeField] private float _force;
 
-    [SerializeField] private Transform _groundCheck;
-
     private bool _isGrounded;
 
-    private Rigidbody2D _rig;
+    private Rigidbody2D _rigidbody;
 
     private Vector2 _startPoint;
     private Vector2 _endPoint;
@@ -20,14 +18,12 @@ public class DragSlime : MonoBehaviour
 
     private void Start()
     {
-        _rig = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-       // _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, 0.05f);
-
-        if (_rig.velocity.x > 0)
+        if (_rigidbody.velocity.x > 0)
             transform.eulerAngles = new Vector3(0, 0, 0);
         else
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -42,7 +38,7 @@ public class DragSlime : MonoBehaviour
         {
             _endPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 force = (_endPoint - _startPoint).normalized * Vector2.Distance(_startPoint, _endPoint) * _force;
-            _rig.AddForce(force);
+            _rigidbody.AddForce(force);
         }
     }
 
