@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathZone : Point
@@ -14,8 +12,8 @@ public class DeathZone : Point
         base.OnTriggerEnter2D(collision);
     }
 
-    protected override void CollectPoint()
+    protected override void CollectPoint(Slime slime)
     {
-        Slime.Die();
+        slime.Die();
     }
 }

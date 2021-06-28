@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Game))]
+
 public class GameLocation : MonoBehaviour
 {
     [SerializeField] private Vector2 _min;
@@ -34,7 +35,7 @@ public class GameLocation : MonoBehaviour
 
     private void SpawnPoints()
     {
-        foreach(GameObject g in _points)
+        foreach (GameObject g in _points)
         {
             int spawnCount = Random.Range(1, 4);
             for (int i = 0; i < spawnCount; i++)
@@ -72,6 +73,7 @@ public class GameLocation : MonoBehaviour
     {
         if (points.Count == 0)
             return transform;
+
         Transform closestPoint = null;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;

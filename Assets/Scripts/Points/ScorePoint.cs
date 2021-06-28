@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScorePoint : Point
-{ 
+{
     [SerializeField] private GameObject _collectEffect;
 
+    private float _effectLenght = 0.05f;
 
     protected override void Start()
     {
@@ -17,9 +17,9 @@ public class ScorePoint : Point
         base.OnTriggerEnter2D(collision);
     }
 
-    protected override void CollectPoint()
+    protected override void CollectPoint(Slime slime)
     {
-        Slime.AddPoint();
+        slime.AddPoint();
         gameObject.SetActive(false);
         _collectEffect.SetActive(true);
         gameObject.SetActive(true);
@@ -29,7 +29,7 @@ public class ScorePoint : Point
 
     IEnumerator DestroyPoint()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(_effectLenght);
         Destroy(gameObject);
     }
 }

@@ -8,14 +8,13 @@ public class Game : MonoBehaviour
     private float _textCooldown = 5;
     private float _currentTextCooldown;
 
-    public float CurrentTextCooldown => _currentTextCooldown;
-
     private Slime _slime;
     private GameLocation _gameLocation;
 
     private GameUI _gameUI;
     private bool _isCooldownStarted;
 
+    public float CurrentTextCooldown => _currentTextCooldown;
     public bool IsCooldownStarted => _isCooldownStarted;
 
     private void Start()
@@ -37,10 +36,10 @@ public class Game : MonoBehaviour
         if (!_slime.IsAlive && !IsCooldownStarted)
             PlayerDied();
 
-        if(_isCooldownStarted)
+        if (_isCooldownStarted)
         {
             _currentTextCooldown -= Time.deltaTime;
-            if(_currentTextCooldown <= 0)
+            if (_currentTextCooldown <= 0)
             {
                 _currentTextCooldown = _textCooldown;
                 _isCooldownStarted = false;

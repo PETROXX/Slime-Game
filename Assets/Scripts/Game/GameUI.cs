@@ -1,20 +1,17 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 [RequireComponent(typeof(Game))]
 
 public class GameUI : MonoBehaviour
 {
-    private Game _game;
-    private Slime _slime;
-
     [SerializeField] private TMP_Text _gameOverText;
-    [SerializeField] private TMP_Text _scoreText;
+
+    private Game _game;
 
     private void Start()
     {
         _game = GetComponent<Game>();
-        _slime = FindObjectOfType<Slime>();
     }
 
     private void Update()
@@ -24,7 +21,6 @@ public class GameUI : MonoBehaviour
         else
             _gameOverText.gameObject.SetActive(false);
 
-        _scoreText.text = $"Score: {_slime.Score}";
     }
 
     public void PlayerDied()

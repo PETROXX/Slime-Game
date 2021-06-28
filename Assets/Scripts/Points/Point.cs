@@ -5,11 +5,10 @@ using UnityEngine;
 
 public abstract class Point : MonoBehaviour
 {
-    protected Slime Slime;
 
-    protected AudioSource AudioSource;
     [SerializeField] private AudioClip CollectSound;
 
+    protected AudioSource AudioSource;
     protected bool WasPointCollected;
 
     protected virtual void Start()
@@ -19,19 +18,18 @@ public abstract class Point : MonoBehaviour
 
     protected virtual void Initialize()
     {
-        Slime = FindObjectOfType<Slime>();
         AudioSource = GetComponent<AudioSource>();
         AudioSource.clip = CollectSound;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<Slime>(out _) && !WasPointCollected)
+        if (collision.TryGetComponent<Slime>(out Slime slime) && !WasPointCollected)
         {
-            CollectPoint();
+            CollectPoint(slime);
             WasPointCollected = true;
         }
     }
 
-    protected abstract void CollectPoint ();
+    protected abstract void CollectPoint(Slime slime);
 }

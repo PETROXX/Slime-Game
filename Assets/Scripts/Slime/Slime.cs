@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(DragSlime))]
@@ -13,15 +13,15 @@ public class Slime : MonoBehaviour
     public float Score => _score;
 
     [SerializeField] private GameObject _dieEffect;
-
     [SerializeField] private Vector2 _spawnPosition;
+    [SerializeField] private AudioClip _deathSound;
 
     private DragSlime _dragSlime;
     private SpriteRenderer _spriteRenderer;
-    private Rigidbody2D _rig;
+    private Rigidbody2D _rigidbody;
 
     private AudioSource _audioSource;
-    [SerializeField] private AudioClip _deathSound;
+
 
     public bool IsAlive { get; private set; }
 
@@ -30,12 +30,12 @@ public class Slime : MonoBehaviour
     private void Start()
     {
         IsAlive = true;
-        _rig = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _dragSlime = GetComponent<DragSlime>();
         _audioSource = GetComponent<AudioSource>();
         _audioSource.clip = _deathSound;
-        _rig.position = _spawnPosition;
+        _rigidbody.position = _spawnPosition;
     }
 
     public void AddPoint()
@@ -49,7 +49,7 @@ public class Slime : MonoBehaviour
         _spriteRenderer.enabled = false;
         _dragSlime.enabled = false;
         _dieEffect.SetActive(true);
-        _rig.bodyType = RigidbodyType2D.Static;
+        _rigidbody.bodyType = RigidbodyType2D.Static;
         StartCoroutine(DestroySlime());
         IsAlive = false;
     }
@@ -65,9 +65,9 @@ public class Slime : MonoBehaviour
         _dieEffect.SetActive(false);
         IsAlive = true;
         _spriteRenderer.enabled = true;
-        _rig.bodyType = RigidbodyType2D.Dynamic;
+        _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         _dragSlime.enabled = true;
-        _rig.position = _spawnPosition;
+        _rigidbody.position = _spawnPosition;
         _score = 0;
         gameObject.SetActive(true);
     }
