@@ -1,17 +1,15 @@
 using UnityEngine;
 
 [RequireComponent(typeof(GameLocation))]
-[RequireComponent(typeof(GameUI))]
+[RequireComponent(typeof(GameView))]
 
 public class Game : MonoBehaviour
 {
     private float _textCooldown = 5;
     private float _currentTextCooldown;
-
     private Slime _slime;
     private GameLocation _gameLocation;
-
-    private GameUI _gameUI;
+    private GameView _gameUI;
     private bool _isCooldownStarted;
 
     public float CurrentTextCooldown => _currentTextCooldown;
@@ -22,7 +20,7 @@ public class Game : MonoBehaviour
         _gameLocation = GetComponent<GameLocation>();
         _slime = FindObjectOfType<Slime>();
         _currentTextCooldown = _textCooldown;
-        _gameUI = GetComponent<GameUI>();
+        _gameUI = GetComponent<GameView>();
     }
 
     public void PlayerDied()

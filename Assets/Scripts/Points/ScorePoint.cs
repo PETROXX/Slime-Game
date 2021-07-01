@@ -5,7 +5,7 @@ public class ScorePoint : Point
 {
     [SerializeField] private GameObject _collectEffect;
 
-    private float _effectLenght = 0.05f;
+    private float _effectLenght = 0.5f;
 
     protected override void Start()
     {
@@ -27,7 +27,7 @@ public class ScorePoint : Point
         AudioSource.Play();
     }
 
-    IEnumerator DestroyPoint()
+    private IEnumerator DestroyPoint()
     {
         yield return new WaitForSeconds(_effectLenght);
         Destroy(gameObject);

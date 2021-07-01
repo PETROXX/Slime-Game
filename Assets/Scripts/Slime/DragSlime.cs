@@ -8,9 +8,7 @@ public class DragSlime : MonoBehaviour
     [SerializeField] private float _force;
 
     private bool _isGrounded;
-
     private Rigidbody2D _rigidbody;
-
     private Vector2 _startPoint;
     private Vector2 _endPoint;
 

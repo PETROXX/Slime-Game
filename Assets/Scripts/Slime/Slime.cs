@@ -9,9 +9,6 @@ using UnityEngine;
 public class Slime : MonoBehaviour
 {
     [SerializeField] private float _score;
-
-    public float Score => _score;
-
     [SerializeField] private GameObject _dieEffect;
     [SerializeField] private Vector2 _spawnPosition;
     [SerializeField] private AudioClip _deathSound;
@@ -19,13 +16,12 @@ public class Slime : MonoBehaviour
     private DragSlime _dragSlime;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
-
     private AudioSource _audioSource;
+    private float _deathEffectLenght = 2f;
 
-
+    public float Score => _score;
     public bool IsAlive { get; private set; }
 
-    private float _deathEffectLenght = 2f;
 
     private void Start()
     {
@@ -54,7 +50,7 @@ public class Slime : MonoBehaviour
         IsAlive = false;
     }
 
-    IEnumerator DestroySlime()
+    private IEnumerator DestroySlime()
     {
         yield return new WaitForSeconds(_deathEffectLenght);
         gameObject.SetActive(false);

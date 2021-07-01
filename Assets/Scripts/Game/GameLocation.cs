@@ -8,13 +8,10 @@ public class GameLocation : MonoBehaviour
 {
     [SerializeField] private Vector2 _min;
     [SerializeField] private Vector2 _max;
-
     [SerializeField] private List<GameObject> _points;
-
 
     private List<Transform> _spawnedPoints;
     private List<ScorePoint> _scorePoints;
-
     private Slime _slime;
 
     private void Start()

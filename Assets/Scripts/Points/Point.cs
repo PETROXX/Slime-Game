@@ -5,7 +5,6 @@ using UnityEngine;
 
 public abstract class Point : MonoBehaviour
 {
-
     [SerializeField] private AudioClip CollectSound;
 
     protected AudioSource AudioSource;

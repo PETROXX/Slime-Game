@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Game))]
 
-public class GameUI : MonoBehaviour
+public class GameView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _gameOverText;
 
