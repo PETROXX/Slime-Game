@@ -21,14 +21,9 @@ public abstract class Point : MonoBehaviour
         AudioSource.clip = CollectSound;
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    public virtual void CollectPoint()
     {
-        if (collision.TryGetComponent<Slime>(out Slime slime) && !WasPointCollected)
-        {
-            CollectPoint(slime);
-            WasPointCollected = true;
-        }
+        AudioSource.Play();
+        WasPointCollected = true;
     }
-
-    protected abstract void CollectPoint(Slime slime);
 }

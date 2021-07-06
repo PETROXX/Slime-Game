@@ -12,19 +12,16 @@ public class ScorePoint : Point
         base.Start();
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    public override void CollectPoint()
     {
-        base.OnTriggerEnter2D(collision);
-    }
+        if (WasPointCollected)
+            return;
 
-    protected override void CollectPoint(Slime slime)
-    {
-        slime.AddPoint();
+        base.CollectPoint();
         gameObject.SetActive(false);
         _collectEffect.SetActive(true);
         gameObject.SetActive(true);
         StartCoroutine(DestroyPoint());
-        AudioSource.Play();
     }
 
     private IEnumerator DestroyPoint()

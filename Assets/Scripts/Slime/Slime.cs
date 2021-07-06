@@ -67,4 +67,18 @@ public class Slime : MonoBehaviour
         _score = 0;
         gameObject.SetActive(true);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.TryGetComponent<Point>(out Point point))
+            return;
+
+        point.CollectPoint();
+
+        if (point is DeathZone)
+            Die();
+
+        if (point is ScorePoint)
+            AddPoint();
+    }
 }

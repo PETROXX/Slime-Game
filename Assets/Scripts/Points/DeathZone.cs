@@ -7,13 +7,8 @@ public class DeathZone : Point
         base.Start();
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    public override void CollectPoint()
     {
-        base.OnTriggerEnter2D(collision);
-    }
-
-    protected override void CollectPoint(Slime slime)
-    {
-        slime.Die();
+        base.CollectPoint();
     }
 }
